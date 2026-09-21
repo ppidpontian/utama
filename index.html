@@ -109,7 +109,6 @@
                              onerror="this.src='https://placehold.co/100x100/002654/ffffff?text=JOHOR'">
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-xs font-bold tracking-wider text-johorred uppercase">Jabatan Agama Islam Negeri Johor</span>
                         <span class="text-base sm:text-lg md:text-xl font-extrabold text-johorblue uppercase tracking-tight leading-tight group-hover:text-islamicgreen transition">
                             PPID PONTIAN
                         </span>
@@ -118,7 +117,10 @@
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-1">
+                <nav class="hidden lg:flex items-center space-x-1" aria-label="Menu Utama">
+                    <div class="hidden xl:flex items-center mr-2 px-2.5 py-1 bg-johorblue text-white text-[10px] font-bold rounded-md tracking-wider shadow-sm">
+                        MENU UTAMA <i class="fa-solid fa-caret-right ml-2"></i>
+                    </div>
                     <a href="#utama" class="px-3 py-2 rounded-lg text-sm font-bold text-islamicgreen bg-emerald-50 hover:bg-emerald-100 transition">Utama</a>
                     
                     <!-- Profil Dropdown -->
@@ -167,8 +169,9 @@
                     <button onclick="openSearchModal()" class="p-2 rounded-lg bg-slate-100 text-slate-700">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg bg-johorblue text-white hover:bg-blue-900 focus:outline-none flex items-center gap-2 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider">Menu Utama</span>
+                        <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
@@ -806,7 +809,7 @@
                         PPID PONTIAN
                     </div>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Pejabat Pendidikan Islam Daerah Pontian, Bahagian Pendidikan Islam, Jabatan Agama Islam Negeri Johor.
+                        Pejabat Pendidikan Islam Daerah Pontian, Bahagian Pendidikan Islam.
                     </p>
                 </div>
 
@@ -833,7 +836,6 @@
                 <div>
                     <h4 class="text-white font-bold text-sm mb-3">Pautan Agensi Terkait</h4>
                     <ul class="space-y-2">
-                        <li><a href="https://jainj.johor.gov.my" target="_blank" class="hover:text-johoryellow transition"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1"></i> Jabatan Agama Islam Johor (JAINJ)</a></li>
                         <li><a href="https://www.maij.gov.my" target="_blank" class="hover:text-johoryellow transition"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1"></i> Majlis Agama Islam Johor (MAIJ)</a></li>
                         <li><a href="https://www.jakim.gov.my" target="_blank" class="hover:text-johoryellow transition"><i class="fa-solid fa-arrow-up-right-from-square text-[10px] mr-1"></i> JAKIM</a></li>
                     </ul>
