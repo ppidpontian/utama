@@ -467,9 +467,9 @@
                         <h3 class="font-bold text-base text-white mb-1 group-hover:text-emerald-400 transition">Sistem Maklumat SAKNJ (e-Sekolah)</h3>
                         <p class="text-xs text-slate-400 leading-relaxed mb-4">Pengurusan profil sekolah agama, enrolmen murid, bilangan guru dan maklumat fizikal premis.</p>
                     </div>
-                    <button onclick="showToast('Akses Sistem', 'Membuka Portal e-Sekolah SAKNJ...')" class="w-full bg-slate-700/60 hover:bg-emerald-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk Sistem
-                    </button>
+                    <a href="https://ppidpontian.github.io/sistemmaklumat/" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk e-Sekolah
+                    </a>
                 </div>
 
                 <!-- System Card 2: e-Kehadiran & Profil Guru -->
@@ -484,9 +484,9 @@
                         <h3 class="font-bold text-base text-white mb-1 group-hover:text-blue-400 transition">Sistem Kehadiran & Rekod Guru</h3>
                         <p class="text-xs text-slate-400 leading-relaxed mb-4">Perekodan kehadiran harian, pengurusan permohonan cuti, serta laporan tugasan harian guru SAKJ.</p>
                     </div>
-                    <button onclick="showToast('Akses Sistem', 'Membuka Sistem Kehadiran Guru...')" class="w-full bg-slate-700/60 hover:bg-blue-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-right-to-bracket"></i> Semak Kehadiran
-                    </button>
+                    <a href="#hubungi" onclick="openLoginModal('Sistem Kehadiran & Rekod Guru')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk e-Kehadiran
+                    </a>
                 </div>
 
                 <!-- System Card 3: System Peperiksaan Online -->
@@ -501,9 +501,9 @@
                         <h3 class="font-bold text-base text-white mb-1 group-hover:text-rose-400 transition">Sistem Keputusan SDEA & SRA</h3>
                         <p class="text-xs text-slate-400 leading-relaxed mb-4">Memasukkan markah peperiksaan, pencetakan slip keputusan rasmi, dan analisa pencapaian murid.</p>
                     </div>
-                    <button onclick="showToast('Akses Sistem', 'Membuka Portal Keputusan Peperiksaan...')" class="w-full bg-slate-700/60 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-chart-line"></i> Portal Peperiksaan
-                    </button>
+                    <a href="https://eppidkluang.github.io/portal-interaktif/" target="_blank" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk Peperiksaan
+                    </a>
                 </div>
 
                 <!-- System Card 4: SIM-KAFA -->
@@ -518,9 +518,9 @@
                         <h3 class="font-bold text-base text-white mb-1 group-hover:text-amber-400 transition">Sistem Maklumat Guru KAFA</h3>
                         <p class="text-xs text-slate-400 leading-relaxed mb-4">Pengurusan data perjawatan, semakan elaun bulanan, dan rekod latihan ikhtisas guru KAFA daerah.</p>
                     </div>
-                    <button onclick="showToast('Akses Sistem', 'Membuka Sistem SIM-KAFA...')" class="w-full bg-slate-700/60 hover:bg-amber-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-user-gear"></i> Portal KAFA
-                    </button>
+                    <a href="#hubungi" onclick="openLoginModal('Sistem Maklumat Guru KAFA (SIM-KAFA)')" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk SIM-KAFA
+                    </a>
                 </div>
 
             </div>
@@ -952,38 +952,38 @@
     <div id="modal-latar" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
             <button onclick="closeModal('modal-latar')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+    <!-- Modal Log Masuk Sistem -->
+    <div id="modal-login" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('modal-login')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="flex items-center gap-2 text-blue-700 bg-blue-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
-                <i class="fa-solid fa-book-bookmark"></i> Sejarah & Latar Belakang
+            <div class="flex items-center gap-2 text-johorblue bg-blue-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-lock"></i> Portal Pengguna Berdaftar
             </div>
-            <h3 class="text-xl font-extrabold text-johorblue mb-3">Latar Belakang SAKJ Pontian</h3>
-            <div class="text-sm text-slate-600 space-y-3 leading-relaxed max-h-60 overflow-y-auto pr-2">
-                <p>Sekolah Agama Kerajaan Johor (SAKJ) di daerah Pontian memainkan peranan penting dalam membina asas akidah, syariat, dan akhlak anak-anak negeri Johor sejak dekad silam.</p>
-                <p>Di bawah seliaan Pejabat Pendidikan Islam Daerah Pontian, sistem pendidikan agama petang ini terus berkembang dengan pemerkasaan kurikulum SDEA, kemudahan bilik darjah yang selesa, serta guru-guru bertauliah.</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
-                <button onclick="closeModal('modal-latar')" class="px-5 py-2 bg-johorblue hover:bg-blue-900 text-white text-xs font-bold rounded-xl shadow">Tutup</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Carian Pantas -->
-    <div id="search-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-start justify-center pt-20 p-4">
-        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative">
-            <button onclick="closeSearchModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <h3 class="font-bold text-lg text-johorblue mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-magnifying-glass text-islamicgreen"></i> Carian Pantas Portal
-            </h3>
-            <div class="relative mb-4">
-                <input type="text" id="global-search-input" onkeyup="globalSearch()" placeholder="Taip kata kunci (Cth: Peperiksaan, Borang, SAKJ, Takwim)..." class="w-full px-4 py-3.5 pl-11 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400"></i>
-            </div>
-            <div id="search-results" class="space-y-2 max-h-60 overflow-y-auto text-xs text-slate-600">
-                <p class="text-slate-400 text-center py-4">Masukkan kata kunci untuk mula mencari maklumat dalam portal.</p>
-            </div>
+            <h3 id="login-modal-title" class="text-xl font-extrabold text-johorblue mb-1">Log Masuk Sistem</h3>
+            <p class="text-xs text-slate-500 mb-6">Sila masukkan kad pengenalan dan kata laluan rasmi anda.</p>
+            
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">No. Kad Pengenalan / ID Pengguna</label>
+                    <input type="text" required placeholder="Cth: 850101015555" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kata Laluan</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50">
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                    <label class="flex items-center gap-2 text-slate-600 cursor-pointer">
+                        <input type="checkbox" class="rounded border-slate-300 text-johorblue focus:ring-johorblue">
+                        <span>Ingat saya</span>
+                    </label>
+                    <a href="#hubungi" onclick="closeModal('modal-login')" class="text-johorblue hover:underline font-semibold">Lupa Kata Laluan?</a>
+                </div>
+                <button type="submit" class="w-full bg-johorblue hover:bg-blue-900 text-white font-bold py-3 rounded-xl shadow transition flex items-center justify-center gap-2 text-sm mt-2">
+                    <i class="fa-solid fa-right-to-bracket text-johoryellow"></i> Log Masuk Sistem
+                </button>
+            </form>
         </div>
     </div>
 
@@ -1043,6 +1043,19 @@
                 modal.classList.add('flex');
             }
         }
+
+        function openLoginModal(systemName) {
+            document.getElementById('login-modal-title').innerText = systemName;
+            openModal('modal-login');
+        }
+
+        function handleLoginSubmit(event) {
+            event.preventDefault();
+            const sysName = document.getElementById('login-modal-title').innerText;
+            closeModal('modal-login');
+            showToast('Log Masuk Berjaya', `Anda telah berjaya log masuk ke ${sysName}.`);
+        }
+
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
             if(modal) {
