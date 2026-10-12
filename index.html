@@ -74,7 +74,6 @@
 </head>
 <body class="font-sans text-gray-800 bg-slate-50 flex flex-col min-h-screen selection:bg-islamicgreen selection:text-white custom-scrollbar">
 
-    <!-- Top Utility Bar -->
     <div class="bg-johorblue text-white text-xs border-b border-blue-900/60 py-2 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center flex-wrap justify-center md:justify-start gap-4">
@@ -95,7 +94,6 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -129,9 +127,9 @@
                             Profil PPID <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
                         </button>
                         <div class="absolute left-0 mt-1 w-60 bg-white border border-slate-100 shadow-xl rounded-xl py-2 hidden group-hover:block transition-all duration-200 z-50">
-                            <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-compass mr-2 text-emerald-600"></i>Visi & Misi</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-sitemap mr-2 text-emerald-600"></i>Carta Organisasi</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-book-bookmark mr-2 text-emerald-600"></i>Latar Belakang SAKJ</a>
+                            <a href="#profil" onclick="openModal('modal-visi')" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-compass mr-2 text-emerald-600"></i>Visi & Misi</a>
+                            <a href="#direktori" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-sitemap mr-2 text-emerald-600"></i>Carta Organisasi</a>
+                            <a href="#profil" onclick="openModal('modal-latar')" class="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-islamicgreen"><i class="fa-solid fa-book-bookmark mr-2 text-emerald-600"></i>Latar Belakang SAKJ</a>
                         </div>
                     </div>
 
@@ -151,6 +149,7 @@
                     </div>
 
                     <a href="#portal-perkhidmatan" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-islamicgreen hover:bg-slate-100 transition">Perkhidmatan</a>
+                    <a href="#dashboard-sistem" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-islamicgreen hover:bg-slate-100 transition">Sistem Maklumat</a>
                     <a href="#muat-turun" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-islamicgreen hover:bg-slate-100 transition">Muat Turun</a>
                     <a href="#direktori" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-islamicgreen hover:bg-slate-100 transition">Direktori</a>
                     <a href="#hubungi" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-islamicgreen hover:bg-slate-100 transition">Hubungi</a>
@@ -182,15 +181,15 @@
         <!-- Mobile Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl absolute w-full left-0 z-40">
             <a href="#utama" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-bold text-islamicgreen bg-emerald-50">Utama</a>
-            <a href="#" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Profil Visi & Misi</a>
+            <a href="#profil" onclick="toggleMobileMenu(); openModal('modal-visi');" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Profil Visi & Misi</a>
             <a href="#portal-perkhidmatan" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Perkhidmatan & Permohonan</a>
+            <a href="#dashboard-sistem" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Dashboard Sistem Maklumat</a>
             <a href="#muat-turun" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Muat Turun Borang & Pekeliling</a>
             <a href="#direktori" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Direktori Pegawai & Staf</a>
             <a href="#hubungi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Hubungi Pejabat</a>
         </div>
     </header>
 
-    <!-- Announcement Marquee Bar -->
     <div class="bg-gradient-to-r from-johorred via-red-700 to-johorred text-white shadow-inner flex items-center relative overflow-hidden">
         <div class="bg-johorblue text-johoryellow font-extrabold px-4 py-2.5 text-xs uppercase flex items-center gap-2 z-10 shadow-md shrink-0">
             <i class="fa-solid fa-bullhorn animate-pulse"></i> MAKLUMAN TERKINI
@@ -208,14 +207,13 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <section id="utama" class="relative hero-pattern text-white overflow-hidden py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 <!-- Left Text Content -->
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-johoryellow">
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-johoryellow">
                         <i class="fa-solid fa-star text-amber-300"></i> PORTAL RASMI PPID DAERAH PONTIAN
                     </div>
                     
@@ -307,7 +305,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="portal-perkhidmatan" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -327,7 +324,7 @@
                         <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-blue-600 transition">Unit Pengurusan Sekolah</h3>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Pengurusan pentadbiran Sekolah Agama Kerajaan Johor (SAKJ), perjawatan, pertukaran guru, dan hal ehwal pendaftaran murid.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                    <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
                         Layari Portal UPS <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -341,7 +338,7 @@
                         <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-indigo-600 transition">Unit Akademik</h3>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Penyelarasan kurikulum Pendidikan Islam, perancangan akademik, pemantauan pedagogi dan program kecemerlangan murid SAKJ.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+                    <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800">
                         Maklumat Akademik <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -356,16 +353,16 @@
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Pengurusan pendaftaran calon peperiksaan SDEA, SRA & SDA, takwim ujian, penggubalan soalan dan sistem semakan keputusan rasmi.</p>
                     </div>
                     <div class="flex flex-col gap-2.5">
-                        <a href="#" class="inline-flex items-center text-sm font-semibold text-rose-600 hover:text-rose-800">
+                        <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-rose-600 hover:text-rose-800">
                             Portal Peperiksaan <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                         </a>
-                        <a href="https://eppidkluang.github.io/latihansdea/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-rose-700 bg-rose-100 hover:bg-rose-200 px-3 py-2 rounded-lg transition shadow-sm border border-rose-200 w-full sm:w-fit mt-1">
+                        <a href="https://eppidkluang.github.io/latihansdea/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-rose-700 bg-rose-100 hover:bg-rose-200 px-3 py-2 rounded-lg transition shadow-sm border border-rose-200 w-full mt-1">
                             <i class="fa-solid fa-laptop-file mr-1.5 text-rose-600"></i> Latihan SDEA Dalam Talian
                         </a>
-                        <a href="https://eppidkluang.github.io/portal-interaktif/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-purple-700 bg-purple-100 hover:bg-purple-200 px-3 py-2 rounded-lg transition shadow-sm border border-purple-200 w-full sm:w-fit mt-1">
+                        <a href="https://eppidkluang.github.io/portal-interaktif/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-purple-700 bg-purple-100 hover:bg-purple-200 px-3 py-2 rounded-lg transition shadow-sm border border-purple-200 w-full mt-1">
                             <i class="fa-solid fa-globe mr-1.5 text-purple-600"></i> Portal Interaktif Peperiksaan
                         </a>
-                        <a href="https://waikatodehati.github.io/banksoalan/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-2 rounded-lg transition shadow-sm border border-amber-200 w-full sm:w-fit mt-1">
+                        <a href="https://waikatodehati.github.io/banksoalan/" target="_blank" class="inline-flex items-center justify-center text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-2 rounded-lg transition shadow-sm border border-amber-200 w-full mt-1">
                             <i class="fa-solid fa-book-bookmark mr-1.5 text-amber-600"></i> Bank Soalan Peperiksaan
                         </a>
                     </div>
@@ -380,7 +377,7 @@
                         <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-emerald-600 transition">Pengurusan KAFA & TAJ</h3>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Sistem maklumat guru KAFA, penyelarasan kurikulum Tadika Islam Johor (TAJ), elaun serta pengesahan maklumat murid.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800">
+                    <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800">
                         Layari Portal KAFA <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -395,7 +392,7 @@
                         <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-johorblue transition">Portal e-Hantar Rasmi</h3>
                         <p class="text-sm text-slate-600 mb-4 leading-relaxed">Sistem penghantaran laporan bulanan (e-Kehadiran, Bantuan Kewangan) terus kepada Pejabat PPID.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-johorblue hover:text-blue-900">
+                    <a href="#hubungi" class="inline-flex items-center text-sm font-semibold text-johorblue hover:text-blue-900">
                         Log Masuk e-Hantar <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -407,38 +404,38 @@
                             <i class="fa-solid fa-hammer"></i>
                         </div>
                         <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-amber-600 transition">Pembangunan & Baikpulih</h3>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Permohonan bantuan penyelenggaraan institusi pendidikan, semakan status kelulusan aset dan tender pembekalan.</p>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Pengurusan permohonan peruntukan naik taraf fizikal bangunan sekolah agama, surau, dan kemudahan asas daerah Pontian.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-amber-600 hover:text-amber-800">
-                        Semak Status <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
+                    <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-amber-600 hover:text-amber-800">
+                        Borang Pembangunan <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
 
-                <!-- Service 5: Swasta -->
+                <!-- Service 5: Madrasah & Tahfiz Swasta -->
                 <div class="bg-slate-50 hover:bg-white rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md mb-4 group-hover:scale-110 transition">
                             <i class="fa-solid fa-mosque"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-purple-600 transition">Sekolah / Madrasah Swasta</h3>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Pendaftaran institusi pondok, madrasah tahfiz dan sekolah agama swasta di bawah peruntukan enakmen negeri Johor.</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-purple-600 transition">Madrasah & Tahfiz Swasta</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Pendaftaran institusi swasta, pemantauan kualiti pengajian tahfiz dan hal ehwal kebajikan institusi swasta negeri Johor.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-purple-600 hover:text-purple-800">
-                        Garis Panduan Swasta <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
+                    <a href="#muat-turun" class="inline-flex items-center text-sm font-semibold text-purple-600 hover:text-purple-800">
+                        Maklumat Pendaftaran <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
 
-                <!-- Service 6: Aduan -->
+                <!-- Service 6: Khidmat Nasihat & Aduan -->
                 <div class="bg-slate-50 hover:bg-white rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-slate-700 text-white flex items-center justify-center text-xl shadow-md mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-comments"></i>
+                        <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center text-xl shadow-md mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-headset"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-slate-900 transition">Aduan & Maklum Balas</h3>
-                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Salurkan aduan rasmi, cadangan penambahbaikan perkhidmatan atau pertanyaan umum berkaitan PPID Pontian.</p>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-teal-600 transition">Khidmat Nasihat & Aduan</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">Saluran pertanyaan rasmi, aduan pelanggan, dan sistem sokongan teknikal kaunter khidmat pelanggan PPID Pontian.</p>
                     </div>
-                    <a href="#" class="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-slate-900">
-                        Hantar Aduan <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
+                    <a href="#hubungi" class="inline-flex items-center text-sm font-semibold text-teal-600 hover:text-teal-800">
+                        Saluran Aduan <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
 
@@ -446,509 +443,700 @@
         </div>
     </section>
 
-    <!-- Downloads Section -->
-    <section id="muat-turun" class="py-16 bg-slate-100 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
-                <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-johorblue flex items-center gap-3">
-                        <i class="fa-solid fa-folder-open text-islamicgreen"></i> Muat Turun Borang & Dokumen
-                    </h2>
-                    <p class="text-slate-600 mt-2 text-sm max-w-2xl">Akses pantas kepada borang-borang rasmi perkhidmatan, pekeliling, dan takwim terkini keluaran Pejabat Pendidikan Islam Daerah.</p>
-                </div>
-                <div class="relative w-full md:w-64">
-                    <input type="text" placeholder="Cari borang..." class="w-full px-4 py-2 pl-10 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-islamicgreen focus:border-transparent text-sm">
-                    <i class="fa-solid fa-search absolute left-3.5 top-2.5 text-slate-400"></i>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm whitespace-nowrap">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 uppercase font-semibold text-xs">
-                            <tr>
-                                <th scope="col" class="px-6 py-4 rounded-tl-xl">Nama Dokumen</th>
-                                <th scope="col" class="px-6 py-4">Kategori</th>
-                                <th scope="col" class="px-6 py-4">Tarikh Kemaskini</th>
-                                <th scope="col" class="px-6 py-4 text-center rounded-tr-xl">Tindakan</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <!-- Row 1 -->
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-6 py-4 font-medium text-slate-800 flex items-center gap-3">
-                                    <i class="fa-solid fa-file-pdf text-red-500 text-lg"></i>
-                                    Takwim Persekolahan SAKJ Tahun 2026
-                                </td>
-                                <td class="px-6 py-4 text-slate-600"><span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-semibold">Umum</span></td>
-                                <td class="px-6 py-4 text-slate-500">20 Sep 2026</td>
-                                <td class="px-6 py-4 text-center">
-                                    <button class="bg-islamicgreen hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
-                                        Muat Turun (1.2MB)
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Row 2 -->
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-6 py-4 font-medium text-slate-800 flex items-center gap-3">
-                                    <i class="fa-solid fa-file-pdf text-red-500 text-lg"></i>
-                                    Borang Permohonan Pertukaran Guru SAKJ / KAFA
-                                </td>
-                                <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs font-semibold">Pengurusan</span></td>
-                                <td class="px-6 py-4 text-slate-500">15 Jul 2026</td>
-                                <td class="px-6 py-4 text-center">
-                                    <button class="bg-islamicgreen hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
-                                        Muat Turun (450KB)
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Row 3 -->
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-6 py-4 font-medium text-slate-800 flex items-center gap-3">
-                                    <i class="fa-solid fa-file-word text-blue-500 text-lg"></i>
-                                    Borang Cuti Rehat Khas (CRK) Pindaan 2025
-                                </td>
-                                <td class="px-6 py-4 text-slate-600"><span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs font-semibold">Pentadbiran</span></td>
-                                <td class="px-6 py-4 text-slate-500">01 Jan 2026</td>
-                                <td class="px-6 py-4 text-center">
-                                    <button class="bg-islamicgreen hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
-                                        Muat Turun (320KB)
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Row 4 -->
-                            <tr class="hover:bg-slate-50 transition">
-                                <td class="px-6 py-4 font-medium text-slate-800 flex items-center gap-3">
-                                    <i class="fa-solid fa-file-pdf text-red-500 text-lg"></i>
-                                    Pekeliling Waktu Bertugas Rasmi Bil 6/2025
-                                </td>
-                                <td class="px-6 py-4 text-slate-600"><span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Pekeliling</span></td>
-                                <td class="px-6 py-4 text-slate-500">23 Okt 2025</td>
-                                <td class="px-6 py-4 text-center">
-                                    <button class="bg-islamicgreen hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
-                                        Muat Turun (2.1MB)
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="bg-slate-50 p-4 border-t border-slate-200 text-center">
-                    <a href="#" class="text-sm font-semibold text-islamicgreen hover:text-emerald-800 transition">Lihat Semua Dokumen & Arkib <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Directory Section -->
-    <section id="direktori" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-johorblue">Direktori Pegawai & Kakitangan</h2>
-                <div class="w-20 h-1 bg-johoryellow mx-auto mt-4 rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Profile Card 1 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 text-center hover:shadow-lg transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-300 mx-auto mb-4 border-4 border-white shadow-md overflow-hidden relative">
-                        <!-- Placeholder avatar -->
-                        <div class="absolute inset-0 bg-johorblue flex items-center justify-center text-white text-3xl font-bold">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Ustaz Mohd Faiz Bin Rohani</h4>
-                    <p class="text-xs text-islamicgreen font-semibold mt-1 mb-3">Pegawai Pendidikan Islam Daerah</p>
-                    <div class="text-xs text-slate-500 space-y-1">
-                        <p><i class="fa-solid fa-phone mr-1"></i> 07-687 1212 samb. 101</p>
-                        <p><i class="fa-solid fa-envelope mr-1"></i> ppid.pontian@johor.gov.my</p>
-                    </div>
-                </div>
-
-                <!-- Profile Card 2 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 text-center hover:shadow-lg transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-300 mx-auto mb-4 border-4 border-white shadow-md overflow-hidden relative">
-                        <div class="absolute inset-0 bg-blue-600 flex items-center justify-center text-white text-3xl font-bold">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Ustazah Rohani Binti Bostani</h4>
-                    <p class="text-xs text-blue-600 font-semibold mt-1 mb-3">Pen. Pegawai Kanan Akademik</p>
-                    <div class="text-xs text-slate-500 space-y-1">
-                        <p><i class="fa-solid fa-phone mr-1"></i> 07-687 1212 samb. 102</p>
-                        <p><i class="fa-solid fa-envelope mr-1"></i> akademik.pontian@johor.gov.my</p>
-                    </div>
-                </div>
-
-                <!-- Profile Card 3 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 text-center hover:shadow-lg transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-300 mx-auto mb-4 border-4 border-white shadow-md overflow-hidden relative">
-                        <div class="absolute inset-0 bg-emerald-600 flex items-center justify-center text-white text-3xl font-bold">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Ustaz Ismail Bin Masad</h4>
-                    <p class="text-xs text-emerald-600 font-semibold mt-1 mb-3">Pen. Pegawai Pengurusan Sekolah (UPS)</p>
-                    <div class="text-xs text-slate-500 space-y-1">
-                        <p><i class="fa-solid fa-phone mr-1"></i> 07-687 1212 samb. 104</p>
-                        <p><i class="fa-solid fa-envelope mr-1"></i> ups.pontian@johor.gov.my</p>
-                    </div>
-                </div>
-
-                <!-- Profile Card 4 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 text-center hover:shadow-lg transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-300 mx-auto mb-4 border-4 border-white shadow-md overflow-hidden relative">
-                        <div class="absolute inset-0 bg-amber-600 flex items-center justify-center text-white text-3xl font-bold">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Puan Hajah Norzita binti Abdul Manaf</h4>
-                    <p class="text-xs text-amber-600 font-semibold mt-1 mb-3">Ketua Pembantu Tadbir (KPT)</p>
-                    <div class="text-xs text-slate-500 space-y-1">
-                        <p><i class="fa-solid fa-phone mr-1"></i> 07-687 1212 samb. 105</p>
-                        <p><i class="fa-solid fa-envelope mr-1"></i> admin.pontian@johor.gov.my</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="hubungi" class="py-16 bg-johorblue text-white relative overflow-hidden">
-        <!-- Background Decoration -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-900 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-800 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+    <section id="dashboard-sistem" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-johoryellow bg-johorblue/80 border border-blue-500/30 px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">PORTAL INTEGRASI DIGITAL</span>
+                <h2 class="text-3xl font-black text-white mt-3 tracking-tight">Dashboard Sistem Maklumat Digital</h2>
+                <p class="text-slate-300 mt-2 text-sm sm:text-base">Akses terus ke aplikasi dan sistem pengurusan maklumat rasmi guru, murid, dan pengurusan sekolah agama.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 
-                <!-- Contact Info -->
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-6 flex items-center gap-3">
-                        Hubungi Kami <i class="fa-solid fa-envelope-open-text text-johoryellow"></i>
-                    </h2>
-                    <p class="text-blue-100 mb-8 max-w-md">Sebarang pertanyaan, cadangan atau aduan boleh disalurkan terus kepada kami melalui maklumat di bawah atau isikan borang mesej pantas.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl shrink-0 border border-white/20">
-                                <i class="fa-solid fa-location-dot text-johoryellow"></i>
+                <!-- System Card 1: EMIS / e-Sekolah -->
+                <div class="bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition">
+                                <i class="fa-solid fa-database"></i>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Alamat Pejabat</h4>
-                                <p class="text-blue-100 text-sm mt-1 leading-relaxed">
-                                    Pejabat Pendidikan Islam Daerah Pontian,<br>
-                                    Kompleks Pusat Islam Daerah Pontian,<br>
-                                    Jalan Alsagoff, 82000 Pontian,<br>
-                                    Johor Darul Ta'zim.
-                                </p>
-                            </div>
+                            <span class="text-[10px] font-extrabold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full uppercase">Sistem Pengurusan</span>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl shrink-0 border border-white/20">
-                                <i class="fa-solid fa-phone text-johoryellow"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Telefon / Faks</h4>
-                                <p class="text-blue-100 text-sm mt-1">Tel: 07-687 1212<br>Faks: 07-687 1213</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl shrink-0 border border-white/20">
-                                <i class="fa-solid fa-envelope text-johoryellow"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">E-Mel Rasmi</h4>
-                                <p class="text-blue-100 text-sm mt-1">upsppidpontian@gmail.com</p>
-                            </div>
-                        </div>
+                        <h3 class="font-bold text-base text-white mb-1 group-hover:text-emerald-400 transition">Sistem Maklumat SAKNJ (e-Sekolah)</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Pengurusan profil sekolah agama, enrolmen murid, bilangan guru dan maklumat fizikal premis.</p>
                     </div>
+                    <button onclick="showToast('Akses Sistem', 'Membuka Portal e-Sekolah SAKNJ...')" class="w-full bg-slate-700/60 hover:bg-emerald-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log Masuk Sistem
+                    </button>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl relative">
-                    <h3 class="font-bold text-2xl mb-6 border-b border-slate-100 pb-4">Mesej Pantas</h3>
-                    <form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.reset();">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 mb-1">Nama Penuh</label>
-                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50 text-sm">
+                <!-- System Card 2: e-Kehadiran & Profil Guru -->
+                <div class="bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-blue-500 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition">
+                                <i class="fa-solid fa-clipboard-user"></i>
                             </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 mb-1">No. Telefon</label>
-                                <input type="tel" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50 text-sm">
-                            </div>
+                            <span class="text-[10px] font-extrabold bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full uppercase">e-Kehadiran</span>
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1">Subjek Pertanyaan</label>
-                            <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50 text-sm">
-                                <option>Pertukaran Guru</option>
-                                <option>Urusan KAFA</option>
-                                <option>Aduan Awam</option>
-                                <option>Lain-lain</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1">Mesej</label>
-                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50 text-sm resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-islamicgreen hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition flex justify-center items-center gap-2">
-                            Hantar Mesej <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                        
-                        <!-- Success Message -->
-                        <div id="success-msg" class="hidden mt-4 p-3 bg-emerald-50 text-emerald-700 text-sm font-semibold rounded-lg text-center border border-emerald-200">
-                            <i class="fa-solid fa-circle-check mr-1"></i> Mesej anda berjaya dihantar. Terima kasih!
-                        </div>
-                    </form>
+                        <h3 class="font-bold text-base text-white mb-1 group-hover:text-blue-400 transition">Sistem Kehadiran & Rekod Guru</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Perekodan kehadiran harian, pengurusan permohonan cuti, serta laporan tugasan harian guru SAKJ.</p>
+                    </div>
+                    <button onclick="showToast('Akses Sistem', 'Membuka Sistem Kehadiran Guru...')" class="w-full bg-slate-700/60 hover:bg-blue-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Semak Kehadiran
+                    </button>
                 </div>
-                
+
+                <!-- System Card 3: System Peperiksaan Online -->
+                <div class="bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-rose-500 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition">
+                                <i class="fa-solid fa-square-poll-vertical"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2 py-0.5 rounded-full uppercase">Peperiksaan</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-1 group-hover:text-rose-400 transition">Sistem Keputusan SDEA & SRA</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Memasukkan markah peperiksaan, pencetakan slip keputusan rasmi, dan analisa pencapaian murid.</p>
+                    </div>
+                    <button onclick="showToast('Akses Sistem', 'Membuka Portal Keputusan Peperiksaan...')" class="w-full bg-slate-700/60 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i> Portal Peperiksaan
+                    </button>
+                </div>
+
+                <!-- System Card 4: SIM-KAFA -->
+                <div class="bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-amber-500 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full uppercase">SIM-KAFA</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-1 group-hover:text-amber-400 transition">Sistem Maklumat Guru KAFA</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Pengurusan data perjawatan, semakan elaun bulanan, dan rekod latihan ikhtisas guru KAFA daerah.</p>
+                    </div>
+                    <button onclick="showToast('Akses Sistem', 'Membuka Sistem SIM-KAFA...')" class="w-full bg-slate-700/60 hover:bg-amber-600 text-slate-200 hover:text-white font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-user-gear"></i> Portal KAFA
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-branddark text-slate-300 py-10 border-t-4 border-johoryellow">
+    <section id="muat-turun" class="py-16 bg-slate-100 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold text-johorred bg-red-100 px-3 py-1 rounded-full uppercase tracking-wider">DOKUMEN RASMI</span>
+                    <h2 class="text-3xl font-extrabold text-johorblue mt-2">Pusat Muat Turun Borang & Pekeliling</h2>
+                    <p class="text-slate-600 mt-1 text-sm sm:text-base">Muat turun borang permohonan, pekeliling ikhtisas, dan panduan tugas rasmi terkini.</p>
+                </div>
+                <div class="flex gap-2 w-full md:w-auto">
+                    <input type="text" id="download-search" placeholder="Cari borang..." onkeyup="filterDownloads()" class="px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue w-full md:w-64 bg-white">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="downloads-container">
                 
-                <div class="col-span-1 md:col-span-2 lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Johor.svg/800px-Coat_of_arms_of_Johor.svg.png" 
-                             alt="Jata Johor" class="h-10 w-auto opacity-90"
-                             onerror="this.style.display='none'">
-                        <div>
-                            <span class="block font-bold text-white text-sm uppercase">PPID Pontian</span>
-                            <span class="block text-[10px] text-slate-400">Kerajaan Negeri Johor</span>
+                <!-- Download Item 1 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-md">Borang SAKJ</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (1.2 MB)</span>
                         </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Borang Permohonan Pertukaran Guru SAKJ 2026</h3>
+                        <p class="text-xs text-slate-500 mb-4">Borang rasmi permohonan pertukaran antara sekolah agama dalam daerah Pontian.</p>
                     </div>
-                    <p class="text-xs leading-relaxed mb-4">Portal rasmi untuk menyalurkan perkhidmatan berinformasi, cekap dan mesra pelanggan bagi pendidikan agama Islam di Daerah Pontian.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram text-sm"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:text-white transition"><i class="fa-brands fa-twitter text-sm"></i></a>
+                    <button onclick="downloadFile('Borang_Pertukaran_Guru_SAKJ_2026.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
+                </div>
+
+                <!-- Download Item 2 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-blue-100 text-blue-800 rounded-md">Pekeliling</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (2.4 MB)</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Pekeliling Waktu Bertugas SAKJ Bil 6/2025</h3>
+                        <p class="text-xs text-slate-500 mb-4">Garis panduan rasmi kehadiran dan waktu bertugas guru-guru Sekolah Agama Kerajaan Johor.</p>
                     </div>
+                    <button onclick="downloadFile('Pekeliling_Waktu_Bertugas_SAKJ_6_2025.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm border-b border-slate-700 pb-2">Pautan Pintas</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#utama" class="hover:text-johoryellow transition"><i class="fa-solid fa-angle-right mr-2 text-xs text-slate-500"></i>Utama</a></li>
-                        <li><a href="#portal-perkhidmatan" class="hover:text-johoryellow transition"><i class="fa-solid fa-angle-right mr-2 text-xs text-slate-500"></i>Perkhidmatan</a></li>
-                        <li><a href="#muat-turun" class="hover:text-johoryellow transition"><i class="fa-solid fa-angle-right mr-2 text-xs text-slate-500"></i>Muat Turun</a></li>
-                        <li><a href="#direktori" class="hover:text-johoryellow transition"><i class="fa-solid fa-angle-right mr-2 text-xs text-slate-500"></i>Direktori Staf</a></li>
-                    </ul>
+                <!-- Download Item 3 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-md">Cuti & Elaun</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (850 KB)</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Borang Permohonan Cuti Rehat Khas KAFA</h3>
+                        <p class="text-xs text-slate-500 mb-4">Borang kemaskini permohonan cuti rehat khas bagi guru KAFA daerah Pontian.</p>
+                    </div>
+                    <button onclick="downloadFile('Borang_CRK_KAFA_Terbaru.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm border-b border-slate-700 pb-2">Agensi Berkaitan</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-islamicgreen transition"><i class="fa-solid fa-up-right-from-square mr-2 text-xs text-slate-500"></i>Majlis Agama Islam Johor</a></li>
-                        <li><a href="#" class="hover:text-islamicgreen transition"><i class="fa-solid fa-up-right-from-square mr-2 text-xs text-slate-500"></i>Jabatan Agama Islam Johor</a></li>
-                        <li><a href="#" class="hover:text-islamicgreen transition"><i class="fa-solid fa-up-right-from-square mr-2 text-xs text-slate-500"></i>Kerajaan Negeri Johor</a></li>
-                    </ul>
+                <!-- Download Item 4 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-purple-100 text-purple-800 rounded-md">Takwim</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (3.1 MB)</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Takwim Peperiksaan SDEA & SRA 2026</h3>
+                        <p class="text-xs text-slate-500 mb-4">Jadual lengkap tarikh pendaftaran, percubaan dan peperiksaan akhir tahun SDEA SAKJ.</p>
+                    </div>
+                    <button onclick="downloadFile('Takwim_Peperiksaan_SDEA_2026.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm border-b border-slate-700 pb-2">Waktu Operasi</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex justify-between"><span>Ahad - Rabu:</span> <span>8:00 AM - 5:00 PM</span></li>
-                        <li class="flex justify-between"><span>Khamis:</span> <span>8:00 AM - 3:30 PM</span></li>
-                        <li class="flex justify-between text-johorred font-medium"><span>Jumaat - Sabtu:</span> <span>Tutup</span></li>
-                        <li class="flex justify-between text-johorred font-medium"><span>Cuti Umum:</span> <span>Tutup</span></li>
-                    </ul>
+                <!-- Download Item 5 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-rose-100 text-rose-800 rounded-md">Bantuan</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (1.5 MB)</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Borang Permohonan Bantuan Khas Murid Miskin</h3>
+                        <p class="text-xs text-slate-500 mb-4">Permohonan bantuan persekolahan agama negeri Johor bagi keluarga B40 Pontian.</p>
+                    </div>
+                    <button onclick="downloadFile('Borang_Bantuan_Khas_Murid_SAKJ.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
+                </div>
+
+                <!-- Download Item 6 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition download-card">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-cyan-100 text-cyan-800 rounded-md">Pendaftaran</span>
+                            <span class="text-xs text-slate-400 font-mono">PDF (1.1 MB)</span>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-base mb-1">Garis Panduan Penubuhan Tahfiz Swasta</h3>
+                        <p class="text-xs text-slate-500 mb-4">Syarat dan prosedur rasmi permohonan lesen pusat pengajian tahfiz swasta Johor.</p>
+                    </div>
+                    <button onclick="downloadFile('Panduan_Penubuhan_Tahfiz_Swasta.pdf')" class="w-full bg-slate-100 hover:bg-islamicgreen hover:text-white text-slate-700 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Muat Turun Fail
+                    </button>
                 </div>
 
             </div>
-            
-            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+        </div>
+    </section>
+
+    <section id="direktori" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-johorblue bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wider">WARGA KERJA PPID</span>
+                <h2 class="text-3xl font-extrabold text-johorblue mt-2">Direktori Pegawai & Barisan Kepimpinan</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Hubungi pegawai barisan hadapan mengikut unit pengurusan di Pejabat Pendidikan Islam Daerah Pontian.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Official 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-blue-100 text-johorblue flex items-center justify-center text-3xl font-black mb-4 border-2 border-johorblue/20 overflow-hidden">
+                        <img src="https://placehold.co/200x200/002654/ffffff?text=KPP" alt="Ketua Pegawai" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">Ustaz Haji Mohd Faizal bin Ahmad</h3>
+                    <p class="text-xs font-bold text-johorblue mt-0.5">Ketua Penolong Pendaftar / KPP</p>
+                    <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i> 07-687 1213</p>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-envelope text-emerald-600 mr-1"></i> faizal.pontian@johor.gov.my</p>
+                </div>
+
+                <!-- Official 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-3xl font-black mb-4 border-2 border-emerald-600/20 overflow-hidden">
+                        <img src="https://placehold.co/200x200/047857/ffffff?text=UPS" alt="Unit Sekolah" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">Ustazah Hajah Noraini binti Selamat</h3>
+                    <p class="text-xs font-bold text-emerald-700 mt-0.5">Ketua Unit Pengurusan Sekolah</p>
+                    <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i> 07-687 1214</p>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-envelope text-emerald-600 mr-1"></i> noraini.ups@johor.gov.my</p>
+                </div>
+
+                <!-- Official 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-rose-100 text-rose-800 flex items-center justify-center text-3xl font-black mb-4 border-2 border-rose-600/20 overflow-hidden">
+                        <img src="https://placehold.co/200x200/e11d48/ffffff?text=EXAM" alt="Peperiksaan" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">Ustaz Abdul Halim bin Kassim</h3>
+                    <p class="text-xs font-bold text-rose-700 mt-0.5">Ketua Seksyen Peperiksaan</p>
+                    <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i> 07-687 1215</p>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-envelope text-emerald-600 mr-1"></i> halim.exam@johor.gov.my</p>
+                </div>
+
+                <!-- Official 4 -->
+                <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-3xl font-black mb-4 border-2 border-amber-600/20 overflow-hidden">
+                        <img src="https://placehold.co/200x200/d97706/ffffff?text=KAFA" alt="KAFA" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-base">Ustazah Siti Aminah binti Omar</h3>
+                    <p class="text-xs font-bold text-amber-700 mt-0.5">Penyelia Unit KAFA & TAJ</p>
+                    <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i> 07-687 1216</p>
+                    <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-envelope text-emerald-600 mr-1"></i> sitiaminah.kafa@johor.gov.my</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="hubungi" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-islamicgreen bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wider">HUBUNGI KAMI</span>
+                <h2 class="text-3xl font-extrabold text-johorblue mt-2">Lokasi & Saluran Perhubungan Rasmi</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Kunjungi pejabat kami atau hantarkan mesej pertanyaan menerusi borang di bawah.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Contact Info & Form -->
+                <div class="lg:col-span-6 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-johorblue mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-islamicgreen"></i> Borang Pertanyaan Rasmi
+                    </h3>
+
+                    <form onsubmit="submitForm(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Penuh</label>
+                            <input type="text" id="contact-name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50" placeholder="Masukkan nama anda...">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Emel Rasmi</label>
+                                <input type="email" id="contact-email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50" placeholder="nama@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombor Telefon</label>
+                                <input type="tel" id="contact-phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50" placeholder="0123456789">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tajuk Pertanyaan / Aduan</label>
+                            <input type="text" id="contact-subject" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50" placeholder="Cth: Pertukaran Murid SAKJ">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mesej / Butiran</label>
+                            <textarea id="contact-message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50" placeholder="Tuliskan pertanyaan anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-johorblue hover:bg-blue-900 text-white font-bold py-3 rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-paper-plane text-johoryellow"></i> Hantar Pertanyaan Rasmi
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Address & Map Card -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-johorblue mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot text-johorred"></i> Alamat & Waktu Operasi
+                        </h3>
+                        <div class="space-y-4 text-sm text-slate-600">
+                            <p class="flex items-start gap-3">
+                                <i class="fa-solid fa-building text-johorblue text-base mt-1"></i>
+                                <span><strong>Pejabat Pendidikan Islam Daerah Pontian</strong><br>Kompleks Kerajaan Daerah Pontian, Jalan Alsagoff, 82000 Pontian, Johor.</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-johorblue text-base"></i>
+                                <span>07-687 1212 / 07-687 1215</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fa-solid fa-print text-johorblue text-base"></i>
+                                <span>07-687 1219 (Faks)</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fa-solid fa-envelope text-johorblue text-base"></i>
+                                <span>upsppidpontian@gmail.com</span>
+                            </p>
+                            <p class="flex items-start gap-3 border-t border-slate-100 pt-3">
+                                <i class="fa-solid fa-clock text-johorblue text-base mt-1"></i>
+                                <span><strong>Waktu Pejabat:</strong><br>Ahad - Rabu: 8.00 pagi - 5.00 petang<br>Khamis: 8.00 pagi - 3.30 petang<br>Jumaat & Sabtu: Cuti Berkala</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Embed Map Placeholder Card -->
+                    <div class="bg-johorblue text-white rounded-2xl p-6 shadow-sm flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="font-bold text-base">Peta Lokasi Google Maps</div>
+                            <div class="text-xs text-blue-200">Navigasi terus ke Pejabat Pendidikan Islam Daerah Pontian.</div>
+                        </div>
+                        <a href="https://maps.google.com/?q=Pejabat+Pendidikan+Islam+Daerah+Pontian" target="_blank" class="bg-johoryellow hover:bg-amber-400 text-johorblue font-bold text-xs px-4 py-2.5 rounded-xl transition shadow flex items-center gap-2">
+                            <i class="fa-solid fa-compass"></i> Buka Peta
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-johorblue text-white pt-12 pb-6 border-t-4 border-johoryellow mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Coat_of_arms_of_Johor.svg/800px-Coat_of_arms_of_Johor.svg.png" alt="Jata Johor" class="h-10 w-auto">
+                        <span class="font-extrabold text-lg uppercase tracking-tight">PPID Pontian</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Portal Rasmi Pejabat Pendidikan Islam Daerah Pontian, Negeri Darul Takzim. Memartabatkan institusi pendidikan Islam yang cemerlang dan berkualiti tinggi.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-johoryellow hover:text-johorblue flex items-center justify-center transition text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-johoryellow hover:text-johorblue flex items-center justify-center transition text-xs"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-johoryellow hover:text-johorblue flex items-center justify-center transition text-xs"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-johoryellow uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">Pautan Pantas</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#utama" class="hover:text-johoryellow transition">Laman Utama</a></li>
+                        <li><a href="#portal-perkhidmatan" class="hover:text-johoryellow transition">Portal Perkhidmatan</a></li>
+                        <li><a href="#muat-turun" class="hover:text-johoryellow transition">Muat Turun Borang</a></li>
+                        <li><a href="#direktori" class="hover:text-johoryellow transition">Direktori Pegawai</a></li>
+                        <li><a href="#hubungi" class="hover:text-johoryellow transition">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-johoryellow uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">Jabatan Berkaitan</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#" class="hover:text-johoryellow transition">Jabatan Agama Islam Negeri Johor (JAINJ)</a></li>
+                        <li><a href="#" class="hover:text-johoryellow transition">Bahagian Pendidikan Islam (BPI) Johor</a></li>
+                        <li><a href="#" class="hover:text-johoryellow transition">Pejabat Pendidikan Daerah Pontian</a></li>
+                        <li><a href="#" class="hover:text-johoryellow transition">Majlis Agama Islam Negeri Johor (MAINJ)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-johoryellow uppercase tracking-wider mb-4 border-b border-blue-900 pb-2">Statistik Pengunjung</h4>
+                    <div class="bg-blue-950/60 p-4 rounded-xl border border-blue-900 space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between items-center">
+                            <span>Hari Ini:</span>
+                            <span class="font-mono font-bold text-johoryellow">348 orang</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Bulan Ini:</span>
+                            <span class="font-mono font-bold text-johoryellow">12,450 orang</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-blue-900 pt-2">
+                            <span>Jumlah Keseluruhan:</span>
+                            <span class="font-mono font-bold text-johoryellow">284,910 orang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-900/80 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4 text-center sm:text-left">
                 <p>&copy; 2026 Pejabat Pendidikan Islam Daerah Pontian. Hak Cipta Terpelihara.</p>
-                <div class="mt-2 md:mt-0 space-x-4">
+                <div class="flex items-center gap-6">
                     <a href="#" class="hover:text-white transition">Dasar Privasi</a>
-                    <a href="#" class="hover:text-white transition">Terma & Syarat</a>
-                    <a href="#" class="hover:text-white transition">Penafian</a>
+                    <a href="#" class="hover:text-white transition">Keselamatan</a>
+                    <a href="#" class="hover:text-white transition">Peta Laman</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Modals Section -->
-    
-    <!-- Search Modal -->
-    <div id="search-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] hidden flex items-start justify-center pt-32">
-        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl p-4 mx-4 animate-fade-in-down relative">
-            <button onclick="closeSearchModal()" class="absolute -top-12 right-0 text-white hover:text-johoryellow text-xl p-2 transition">
-                <i class="fa-solid fa-xmark"></i> Tutup
+    <!-- Modal Pekeliling -->
+    <div id="modal-pekeliling" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal('modal-pekeliling')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="relative">
-                <input type="text" placeholder="Cari pekeliling, borang, berita..." class="w-full text-lg px-6 py-4 rounded-xl bg-slate-100 border-none focus:ring-2 focus:ring-johorblue outline-none pr-14">
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-johorblue hover:text-islamicgreen text-xl transition">
-                    <i class="fa-solid fa-search"></i>
-                </button>
+            <div class="flex items-center gap-2 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-file-pdf"></i> Pekeliling Rasmi Bil 6/2025
             </div>
-            <div class="mt-4 px-2">
-                <p class="text-xs font-bold text-slate-500 mb-2 uppercase">Carian Popular:</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-100 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-slate-200 text-slate-700">Takwim SAKJ</span>
-                    <span class="bg-slate-100 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-slate-200 text-slate-700">Borang CRK</span>
-                    <span class="bg-slate-100 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-slate-200 text-slate-700">e-Hantar</span>
-                    <span class="bg-slate-100 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-slate-200 text-slate-700">Jadual Peperiksaan</span>
-                </div>
+            <h3 class="text-xl font-extrabold text-johorblue mb-2">Waktu Bertugas Guru SAKJ Pontian</h3>
+            <p class="text-xs text-slate-400 mb-4">Tarikh Kuatkuasa: 23 Oktober 2025 | Dikeluarkan oleh BPI Johor</p>
+            <div class="text-sm text-slate-600 space-y-3 leading-relaxed max-h-60 overflow-y-auto pr-2">
+                <p>Pekeliling ini dikeluarkan bagi menetapkan garis panduan terkini waktu bertugas rasmi bagi guru-guru Sekolah Agama Kerajaan Johor (SAKJ) di seluruh daerah Pontian.</p>
+                <p>Antara intipati penting termasuklah ketetapan kehadiran guru 15 minit sebelum sesi pengajaran bermula, pengesahan e-kehadiran digital, serta prosedur penggantian kelas bagi guru yang terlibat dengan tugas rasmi luar.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeModal('modal-pekeliling')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl">Tutup</button>
+                <button onclick="downloadFile('Pekeliling_Waktu_Bertugas_SAKJ_6_2025.pdf'); closeModal('modal-pekeliling');" class="px-5 py-2 bg-islamicgreen hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow">Muat Turun PDF</button>
             </div>
         </div>
     </div>
 
-    <!-- Info Modal: Pekeliling -->
-    <div id="modal-pekeliling" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 mx-4 relative">
-            <button onclick="closeModal('modal-pekeliling')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition">
-                <i class="fa-solid fa-xmark text-xl"></i>
+    <!-- Modal Takwim -->
+    <div id="modal-takwim" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('modal-takwim')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-                <h3 class="font-bold text-lg">Pekeliling Bil 6/2025</h3>
+            <div class="flex items-center gap-2 text-blue-700 bg-blue-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-calendar-days"></i> Takwim Persekolahan 2026
             </div>
-            <div class="text-sm text-slate-600 space-y-3 mb-6">
-                <p><strong>Subjek:</strong> Waktu Bertugas Rasmi Guru SAKJ Daerah Pontian</p>
-                <p>Merujuk kepada ketetapan terbaharu dari Bahagian Pendidikan Islam JAINJ, waktu bertugas guru telah dipinda bagi menyelaras waktu rehat dan aktiviti kokurikulum.</p>
-                <p>Sila muat turun pekeliling penuh untuk perincian dan jadual yang dilampirkan.</p>
+            <h3 class="text-xl font-extrabold text-johorblue mb-2">Takwim SAKJ & Peperiksaan SDEA 2026</h3>
+            <p class="text-xs text-slate-400 mb-4">Rujukan Rasmi Sesi 2026</p>
+            <div class="text-sm text-slate-600 space-y-3 leading-relaxed max-h-60 overflow-y-auto pr-2">
+                <p>Muat turun takwim lengkap penggal persekolahan Sekolah Agama Kerajaan Johor, tarikh cuti penggal, cuti peristiwa, serta jadual pendaftaran dan peperiksaan SDEA 2026.</p>
             </div>
-            <div class="flex justify-end gap-3">
-                <button onclick="closeModal('modal-pekeliling')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-lg transition">Tutup</button>
-                <a href="#muat-turun" onclick="closeModal('modal-pekeliling')" class="px-4 py-2 bg-islamicgreen hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg transition">Muat Turun</a>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeModal('modal-takwim')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl">Tutup</button>
+                <button onclick="downloadFile('Takwim_Peperiksaan_SDEA_2026.pdf'); closeModal('modal-takwim');" class="px-5 py-2 bg-islamicgreen hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow">Muat Turun PDF</button>
             </div>
         </div>
     </div>
 
-    <!-- Info Modal: Takwim -->
-    <div id="modal-takwim" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 mx-4 relative">
-            <button onclick="closeModal('modal-takwim')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition">
-                <i class="fa-solid fa-xmark text-xl"></i>
+    <!-- Modal Tingkatan 1 -->
+    <div id="modal-tingkatan1" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('modal-tingkatan1')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-calendar-days"></i>
-                </div>
-                <h3 class="font-bold text-lg">Takwim Persekolahan 2026</h3>
+            <div class="flex items-center gap-2 text-amber-800 bg-amber-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-graduation-cap"></i> Semakan Kelayakan
             </div>
-            <div class="text-sm text-slate-600 space-y-3 mb-6">
-                <p>Takwim rasmi untuk sesi persekolahan Sekolah Agama Kerajaan Johor bagi tahun 2026 telah dikeluarkan.</p>
-                <p>Termasuk kalendar cuti perayaan, jadual peperiksaan (SDEA, SRA, SDA) dan tarikh-tarikh penting pengurusan sekolah.</p>
+            <h3 class="text-xl font-extrabold text-johorblue mb-2">Keputusan Ujian Kelayakan Tingkatan 1</h3>
+            <p class="text-xs text-slate-400 mb-4">Sesi Kemasukan Sekolah Agama Menengah</p>
+            <div class="text-sm text-slate-600 space-y-3 leading-relaxed">
+                <p>Ibu bapa dan penjaga boleh menyemak status penempatan serta keputusan ujian kelayakan Tingkatan 1 anak/jagaan di sekolah agama daerah Pontian secara dalam talian dengan memasukkan nombor MyKID murid.</p>
             </div>
-            <div class="flex justify-end gap-3">
-                <button onclick="closeModal('modal-takwim')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-lg transition">Tutup</button>
-                <a href="#muat-turun" onclick="closeModal('modal-takwim')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition">Muat Turun</a>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeModal('modal-tingkatan1')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl">Tutup</button>
+                <a href="#hubungi" onclick="closeModal('modal-tingkatan1')" class="px-5 py-2 bg-johorblue hover:bg-blue-900 text-white text-xs font-bold rounded-xl shadow">Hubungi Pejabat</a>
             </div>
         </div>
     </div>
 
-    <!-- Info Modal: Tingkatan 1 -->
-    <div id="modal-tingkatan1" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center">
-        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 mx-4 relative">
-            <button onclick="closeModal('modal-tingkatan1')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition">
-                <i class="fa-solid fa-xmark text-xl"></i>
+    <!-- Modal Visi & Misi -->
+    <div id="modal-visi" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('modal-visi')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-graduation-cap"></i>
+            <div class="flex items-center gap-2 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-compass"></i> Profil Korporat
+            </div>
+            <h3 class="text-xl font-extrabold text-johorblue mb-3">Visi & Misi PPID Pontian</h3>
+            <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                <div>
+                    <h4 class="font-bold text-slate-800 text-xs uppercase text-islamicgreen mb-1">Visi</h4>
+                    <p class="italic bg-emerald-50/60 p-3 rounded-xl border border-emerald-100">"Pendidikan Islam Berkualiti Pemacu Kecemerlangan Ummah Menuju Kemakmuran Negeri Johor."</p>
                 </div>
-                <h3 class="font-bold text-lg">Semakan Tingkatan 1</h3>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-xs uppercase text-johorblue mb-1">Misi</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>Memperkasa pengurusan institusi SAKJ dan KAFA yang cekap serta berintegriti.</li>
+                        <li>Melahirkan murid yang menguasai al-Quran, Fardhu Ain, dan berakhlak mulia.</li>
+                        <li>Menyediakan perkhidmatan digital berkualiti tinggi kepada guru dan ibu bapa.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="text-sm text-slate-600 space-y-3 mb-6">
-                <p>Ibu bapa dan penjaga kini boleh membuat semakan status kelayakan Ujian Kemasukan Tingkatan 1 Sekolah Menengah Agama Kerajaan Johor bagi sesi 2026.</p>
-                <p>Sila sedia ada Nombor Kad Pengenalan Murid / Nombor Sijil Lahir semasa membuat semakan di sistem.</p>
-            </div>
-            <div class="flex justify-end gap-3">
-                <button onclick="closeModal('modal-tingkatan1')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-lg transition">Tutup</button>
-                <a href="#" onclick="closeModal('modal-tingkatan1')" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold rounded-lg transition">Semak Sekarang</a>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal('modal-visi')" class="px-5 py-2 bg-johorblue hover:bg-blue-900 text-white text-xs font-bold rounded-xl shadow">Faham</button>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Modal Latar Belakang SAKJ -->
+    <div id="modal-latar" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('modal-latar')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-2 text-blue-700 bg-blue-50 px-3 py-1 rounded-md text-xs font-bold w-fit mb-3">
+                <i class="fa-solid fa-book-bookmark"></i> Sejarah & Latar Belakang
+            </div>
+            <h3 class="text-xl font-extrabold text-johorblue mb-3">Latar Belakang SAKJ Pontian</h3>
+            <div class="text-sm text-slate-600 space-y-3 leading-relaxed max-h-60 overflow-y-auto pr-2">
+                <p>Sekolah Agama Kerajaan Johor (SAKJ) di daerah Pontian memainkan peranan penting dalam membina asas akidah, syariat, dan akhlak anak-anak negeri Johor sejak dekad silam.</p>
+                <p>Di bawah seliaan Pejabat Pendidikan Islam Daerah Pontian, sistem pendidikan agama petang ini terus berkembang dengan pemerkasaan kurikulum SDEA, kemudahan bilik darjah yang selesa, serta guru-guru bertauliah.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal('modal-latar')" class="px-5 py-2 bg-johorblue hover:bg-blue-900 text-white text-xs font-bold rounded-xl shadow">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Carian Pantas -->
+    <div id="search-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-start justify-center pt-20 p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative">
+            <button onclick="closeSearchModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-bold text-lg text-johorblue mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass text-islamicgreen"></i> Carian Pantas Portal
+            </h3>
+            <div class="relative mb-4">
+                <input type="text" id="global-search-input" onkeyup="globalSearch()" placeholder="Taip kata kunci (Cth: Peperiksaan, Borang, SAKJ, Takwim)..." class="w-full px-4 py-3.5 pl-11 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-johorblue bg-slate-50">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400"></i>
+            </div>
+            <div id="search-results" class="space-y-2 max-h-60 overflow-y-auto text-xs text-slate-600">
+                <p class="text-slate-400 text-center py-4">Masukkan kata kunci untuk mula mencari maklumat dalam portal.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl z-50 hidden items-center gap-3 border border-slate-700 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <div>
+            <div id="toast-title" class="font-bold text-sm">Berjaya!</div>
+            <div id="toast-desc" class="text-xs text-slate-300">Tindakan anda telah direkodkan.</div>
+        </div>
+    </div>
+
     <script>
-        // Live Clock functionality
+        // Live Clock
         function updateClock() {
             const now = new Date();
-            const timeString = now.toLocaleTimeString('ms-MY', { 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit',
-                hour12: true
-            });
-            document.getElementById('live-clock').textContent = timeString;
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('live-clock').innerText = `${hours}:${minutes}:${seconds}`;
         }
         setInterval(updateClock, 1000);
-        updateClock(); // Initial call
+        updateClock();
 
-        // Font Size Adjustments
-        let currentSize = 100;
-        function adjustFontSize(step) {
-            currentSize += step * 10;
-            // Boundaries between 80% and 130%
-            if (currentSize < 80) currentSize = 80;
-            if (currentSize > 130) currentSize = 130;
-            document.documentElement.style.fontSize = currentSize + '%';
+        // Font Size Adjuster
+        let currentFontSize = 100;
+        function adjustFontSize(change) {
+            currentFontSize += (change * 10);
+            if (currentFontSize < 90) currentFontSize = 90;
+            if (currentFontSize > 130) currentFontSize = 130;
+            document.documentElement.style.fontSize = currentFontSize + '%';
+            showToast('Saiz Teks', `Saiz teks diubah kepada ${currentFontSize}%`);
         }
-
         function resetFontSize() {
-            currentSize = 100;
+            currentFontSize = 100;
             document.documentElement.style.fontSize = '100%';
+            showToast('Saiz Teks', 'Saiz teks dikembalikan kepada normal.');
         }
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
-            
             menu.classList.toggle('hidden');
-            
-            if (menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+            if(menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-lg';
             } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
+                icon.className = 'fa-solid fa-xmark text-lg';
             }
         }
 
-        // Modal Controls
-        function openSearchModal() {
-            document.getElementById('search-modal').classList.remove('hidden');
-            // Give input focus after opening
-            setTimeout(() => {
-                document.querySelector('#search-modal input').focus();
-            }, 100);
+        // Modals
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if(modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if(modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
         }
 
+        // Search Modal
+        function openSearchModal() {
+            document.getElementById('search-modal').classList.remove('hidden');
+            document.getElementById('search-modal').classList.add('flex');
+            document.getElementById('global-search-input').focus();
+        }
         function closeSearchModal() {
+            document.getElementById('search-modal').classList.remove('flex');
             document.getElementById('search-modal').classList.add('hidden');
         }
 
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
+        // Global Search simulation
+        function globalSearch() {
+            const query = document.getElementById('global-search-input').value.toLowerCase();
+            const container = document.getElementById('search-results');
+            if(!query.trim()) {
+                container.innerHTML = '<p class="text-slate-400 text-center py-4">Masukkan kata kunci untuk mula mencari maklumat dalam portal.</p>';
+                return;
+            }
+
+            const items = [
+                { title: "Pekeliling Waktu Bertugas Guru SAKJ Bil 6/2025", cat: "Pekeliling", action: () => openModal('modal-pekeliling') },
+                { title: "Takwim Persekolahan & Peperiksaan SAKJ 2026", cat: "Takwim", action: () => openModal('modal-takwim') },
+                { title: "Semakan Keputusan Ujian Kelayakan Tingkatan 1", cat: "Permohonan", action: () => openModal('modal-tingkatan1') },
+                { title: "Borang Permohonan Pertukaran Guru SAKJ", cat: "Borang", action: () => location.hash = '#muat-turun' },
+                { title: "Borang Permohonan Cuti Rehat Khas KAFA", cat: "KAFA", action: () => location.hash = '#muat-turun' },
+                { title: "Direktori Pegawai & Unit Pengurusan Sekolah", cat: "Direktori", action: () => location.hash = '#direktori' }
+            ];
+
+            const filtered = items.filter(i => i.title.toLowerCase().includes(query) || i.cat.toLowerCase().includes(query));
+            if(filtered.length === 0) {
+                container.innerHTML = '<p class="text-slate-500 text-center py-4">Tiada maklumat sepadan ditemui.</p>';
+                return;
+            }
+
+            let html = '';
+            filtered.forEach(item => {
+                html += `<div onclick="closeSearchModal();" class="p-3 bg-slate-50 hover:bg-emerald-50 rounded-xl cursor-pointer border border-slate-200 transition flex justify-between items-center">
+                    <div>
+                        <span class="text-[10px] font-bold bg-blue-100 text-johorblue px-2 py-0.5 rounded mr-2">${item.cat}</span>
+                        <span class="font-bold text-slate-800 text-xs">${item.title}</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </div>`;
+            });
+            container.innerHTML = html;
         }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
+        // Filter Downloads
+        function filterDownloads() {
+            const query = document.getElementById('download-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.download-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if(text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
 
-        // Close modals on clicking outside the modal content
-        window.onclick = function(event) {
-            const searchModal = document.getElementById('search-modal');
-            const pekelilingModal = document.getElementById('modal-pekeliling');
-            const takwimModal = document.getElementById('modal-takwim');
-            const tingkatan1Modal = document.getElementById('modal-tingkatan1');
-            
-            if (event.target == searchModal) closeSearchModal();
-            if (event.target == pekelilingModal) closeModal('modal-pekeliling');
-            if (event.target == takwimModal) closeModal('modal-takwim');
-            if (event.target == tingkatan1Modal) closeModal('modal-tingkatan1');
+        // File download simulation
+        function downloadFile(filename) {
+            showToast('Muat Turun Fail', `Fail "${filename}" sedang dimuat turun...`);
+        }
+
+        // Form Submit
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            showToast('Pertanyaan Diterima', `Terima kasih ${name}. Mesej anda telah berjaya dihantar ke PPID Pontian.`);
+            event.target.reset();
+        }
+
+        // Toast Notification Helper
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = desc;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.remove('flex');
+                toast.classList.add('hidden');
+            }, 4000);
         }
     </script>
 </body>
